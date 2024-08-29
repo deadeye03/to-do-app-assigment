@@ -31,3 +31,18 @@ body {
     text-wrap: balance;
   }
 }
+.edit__input:focus{
+  outline: none;
+  border: none;
+}
+.active{
+  border: 1px solid rgb(0, 110, 255);
+  padding: 4px;
+  border-radius: 5px;
+}
+.hidden{
+  display: none;
+}
+.show{
+  display: block;
+}

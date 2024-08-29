@@ -1,0 +1,62 @@
+.loading {
+    display: flex;
+    gap: 8px;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 10px;
+    height: 35px;
+
+}
+
+.btn {
+    height: 15px;
+    width: 15px;
+    border-radius: 100px;
+    background-color: rgb(255, 252, 252);
+    display: block;
+    position: relative;
+    bottom: 0%;
+    /* Set initial position */
+    animation: loading .6s ease-in alternate infinite;
+    /* Apply animation to all buttons */
+}
+
+.btn1 {
+    animation-delay: 0s;
+    /* No delay for the first button */
+    background-color: rgb(229 56 52);
+}
+
+.btn2 {
+    animation-delay: 0.15s;
+    /* Delay to align with the first button */
+    background-color: rgb(30 136 229);
+}
+
+.btn3 {
+    animation-delay: 0.3s;
+    /* Delay to align with the first button */
+    background-color: rgb(67 160 71);
+}
+
+.btn4 {
+    animation-delay: 0.45s;
+    /* Delay to align with the first button */
+    background-color: rgb(253 216 52);
+}
+
+.btn5 {
+    animation-delay: .6s;
+    /* Delay to align with the first button */
+    background-color: rgb(251 140 0);
+}
+
+@keyframes loading {
+    0% {
+        bottom: 0%;
+    }
+
+    100% {
+        bottom: 40%;
+    }
+}
