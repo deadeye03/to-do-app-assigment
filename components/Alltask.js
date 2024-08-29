@@ -47,6 +47,7 @@ function Alltask() {
         const response = await res.json()
         if (response.success) {
             toast('successfully added task')
+            location.reload();
         }
         else {
             toast('Unable add task')
