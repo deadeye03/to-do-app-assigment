@@ -18,7 +18,7 @@ export const fetchAllTask = async (page) => {
 
 export const searchAllTask = async (query) => {
     console.log('fetching...course');
-    page = page * 1 || 1;
+    const page =  1;
     const limitBy = 4;
     const skip = (page - 1) * limitBy;
     await connectDB();
