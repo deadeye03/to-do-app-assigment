@@ -22,10 +22,7 @@ function Alltask() {
     const [count, setCount] = useState(1)
     const [allTask, setAllTask] = useState([])
 
-    /**
-     * Fetches all tasks from the server.
-     * @param {number} page - The page number to fetch tasks from.
-     */
+
     const getAllTask = async (page) => {
         const tasks = await fetchAllTask(page)
         setAllTask(tasks.allTask)
@@ -38,7 +35,6 @@ function Alltask() {
 
     /**
      * Handles form submission to add a new task.
-     * @param {Object} data - The data submitted from the form.
      */
     const onSubmit = async (data) => {
         data = await data
@@ -78,7 +74,6 @@ function Alltask() {
 
     /**
      * Displays the description of a selected task.
-     * @param {Object} task - The task object containing details.
      */
     const showDescription = (task) => {
         setDescription(task.description);
@@ -89,7 +84,6 @@ function Alltask() {
 
     /**
      * Prevents the form from closing when clicking inside it.
-     * @param {Event} e - The click event.
      */
     const notCloseForm = (e) => {
         e.stopPropagation();
@@ -119,7 +113,7 @@ function Alltask() {
 
     /**
      * Handles the change event for the search input with debouncing.
-     * @param {string} query - The search query.
+     *  - The search query.
      */
     const handleChange = useDebouncedCallback(async (query) => {
         setIsLoading(true)

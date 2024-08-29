@@ -6,8 +6,8 @@ import Task from "@/model/Task";
 /**
  * Fetches all tasks from the database with pagination.
  *
- * @param {number} page - The page number to fetch. Defaults to 1 if not provided or invalid.
- * @returns {Promise<Object>} An object containing the tasks and the total length of tasks.
+ *  - The page number to fetch. Defaults to 1 if not provided or invalid.
+ *  An object containing the tasks and the total length of tasks.
  */
 export const fetchAllTask = async (page) => {
     page = page * 1 || 1;
@@ -27,8 +27,8 @@ export const fetchAllTask = async (page) => {
  * constructs a regular expression to match tasks containing all the words, and
  * retrieves the matching tasks from the database.
  *
- * @param {string} query - The search query containing words to match against task titles.
- * @returns {Promise<Array>} - A promise that resolves to an array of matching tasks.
+ * - The search query containing words to match against task titles.
+ *  - A promise that resolves to an array of matching tasks.
  */
 export const searchAllTask = async (query) => {
     console.log('fetching...course');

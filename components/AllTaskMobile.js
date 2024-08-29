@@ -20,8 +20,7 @@ function Alltask() {
 /**
  * Fetches all tasks for a given page and updates the state with the fetched tasks.
  *
- * @param {number} page - The page number to fetch tasks for.
- * @returns {Promise<void>} - A promise that resolves when the tasks have been fetched and state updated.
+ * - A promise that resolves when the tasks have been fetched and state updated.
  */
 const getAllTask = async (page) => {
     const tasks = await fetchAllTask(page);
@@ -36,8 +35,7 @@ const getAllTask = async (page) => {
 /**
  * Handles the form submission by sending the provided data to the server.
  * 
- * @param {Object} data - The data to be submitted.
- * @returns {Promise<void>} - A promise that resolves when the submission is complete.
+ *  - A promise that resolves when the submission is complete.
  */
 const onSubmit = async (data) => {
     data = await data;
@@ -73,7 +71,7 @@ const closeForm = () => {
 /**
  * Prevents the form from closing by stopping the event propagation.
  *
- * @param {Event} e - The event object.
+ *  - The event object.
  */
 const notCloseForm = (e) => {
     e.stopPropagation();
@@ -95,7 +93,7 @@ const notCloseForm = (e) => {
      * This function updates the query parameters in the URL, performs a search for tasks,
      * and updates the state with the search results.
      *
-     * @param {string} query - The search query string.
+     * - The search query string.
      */
     const handleChange = useDebouncedCallback(async (query) => {
         setIsLoading(true);
