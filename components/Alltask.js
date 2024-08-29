@@ -21,7 +21,7 @@ function Alltask() {
     const [id, setId] = useState()
     const [count, setCount] = useState(1)
     const [allTask, setAllTask] = useState([])
-
+    const router=useRouter();
 
     const getAllTask = async (page) => {
         const tasks = await fetchAllTask(page)
@@ -105,7 +105,6 @@ function Alltask() {
     // Creating search Query
     const searchParams = useSearchParams();
     const pathName = usePathname();
-    const router = useRouter();
     let queries = ''
 
     // /**

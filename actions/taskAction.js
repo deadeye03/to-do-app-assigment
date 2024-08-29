@@ -10,7 +10,7 @@ export const fetchAllTask = async (page) => {
     const skip = (page - 1) * limitBy;
     
     await connectDB();
-    const allTask = await Task.find().skip(skip).limit(limitBy).sort({ createdAt: -1 });
+    const allTask = await Task.find().skip(skip).limit(limitBy).sort({ postedAt: -1 });
     const length = (await Task.find()).length;
     return JSON.parse(JSON.stringify({ allTask, length }));
 };

@@ -9,7 +9,7 @@ function TaskDetails({ desc, title,id }) {
   const [descValue, setDescValue] = useState(desc)
   const inputRef=useRef(null)
   const buttonRef=useRef(null)
-  // const Screenwidth=window.innerWidth;
+  const Screenwidth=window.innerWidth;
   useEffect(()=>{
     
   },[desc,descValue])
@@ -45,13 +45,13 @@ function TaskDetails({ desc, title,id }) {
      const response = await res.json()
         if (response.success) {
             toast('successfully Deleted task')
-            // if (Screenwidth >= 641) {
-            //   location.reload();
+            if (Screenwidth >= 641) {
+              location.reload();
               
-            // }
-            // else{
+            }
+            else{
               router.push('/');
-            // }
+            }
         }
         else {
             toast('Unable upadate task')
