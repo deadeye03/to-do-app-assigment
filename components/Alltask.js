@@ -33,9 +33,7 @@ function Alltask() {
         getAllTask();
     }, [])
 
-    /**
-     * Handles form submission to add a new task.
-     */
+  
     const onSubmit = async (data) => {
         data = await data
         // console.log(data)
@@ -55,26 +53,24 @@ function Alltask() {
         }
     }
 
-    /**
-     * Shows the form to add a new task.
-     */
+   
     const showForm = () => {
         // console.log('show')
         inputRef.current.style.opacity = '95%'
         inputRef.current.style.visibility = 'visible'
     }
 
-    /**
-     * Closes the form to add a new task.
-     */
+    // /**
+    //  * Closes the form to add a new task.
+    //  */
     const closeForm = () => {
         inputRef.current.style.opacity = '0'
         inputRef.current.style.visibility = 'hidden'
     }
 
-    /**
-     * Displays the description of a selected task.
-     */
+    // /**
+    //  * Displays the description of a selected task.
+    //  */
     const showDescription = (task) => {
         setDescription(task.description);
         setTitle(task.title);
@@ -82,24 +78,24 @@ function Alltask() {
         showDetailRef.current.style.display = 'block'
     }
 
-    /**
-     * Prevents the form from closing when clicking inside it.
-     */
+    // /**
+    //  * Prevents the form from closing when clicking inside it.
+    //  */
     const notCloseForm = (e) => {
         e.stopPropagation();
     }
 
-    /**
-     * Shows the search bar.
-     */
+    // /**
+    //  * Shows the search bar.
+    //  */
     const showSearchBar = () => {
         searchRef.current.style.display = 'block';
         searchRef.current.style.width = '70%'
     }
 
-    /**
-     * Closes the search bar.
-     */
+    // /**
+    //  * Closes the search bar.
+    //  */
     const closeSearchBar = () => {
         searchRef.current.style.display = 'none';
         searchRef.current.style.width = '0%'
@@ -111,10 +107,10 @@ function Alltask() {
     const router = useRouter();
     let queries = ''
 
-    /**
-     * Handles the change event for the search input with debouncing.
-     *  - The search query.
-     */
+    // /**
+    //  * Handles the change event for the search input with debouncing.
+    //  *  - The search query.
+    //  */
     const handleChange = useDebouncedCallback(async (query) => {
         setIsLoading(true)
         queries = query

@@ -3,12 +3,7 @@
 import { connectDB } from "@/db/connectDB";
 import Task from "@/model/Task";
 
-/**
- * Fetches all tasks from the database with pagination.
- *
- *  - The page number to fetch. Defaults to 1 if not provided or invalid.
- *  An object containing the tasks and the total length of tasks.
- */
+
 export const fetchAllTask = async (page) => {
     page = page * 1 || 1;
     const limitBy = 4;
@@ -20,16 +15,7 @@ export const fetchAllTask = async (page) => {
     return JSON.parse(JSON.stringify({ allTask, length }));
 };
 
-/**
- * Searches for all tasks that match the given query.
- *
- * This function connects to the database, splits the query into individual words,
- * constructs a regular expression to match tasks containing all the words, and
- * retrieves the matching tasks from the database.
- *
- * - The search query containing words to match against task titles.
- *  - A promise that resolves to an array of matching tasks.
- */
+
 export const searchAllTask = async (query) => {
     console.log('fetching...course');
     await connectDB();

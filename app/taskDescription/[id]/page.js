@@ -1,37 +1,34 @@
 "use client"
 import TaskDetails from '@/components/TaskDetails';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 
-function Page(params) {
-    const id=params.params.id;
-    const [task,setTask]=useState({})
+function Page({ params }) {
+    const id = params.id;
+    const [task, setTask] = useState({});
 
-    const getTask=async()=>{
-        const response=await fetch(`/api/mobileTask/${id}`)
-        
-        const res=await response.json()
-        if (res.success) {
-            // console.log("response is",res.result)
-            setTask(res.result) 
-            // console.log('task is ',task)         
+    const getTask = async () => {
+        try {
+            const response = await fetch(`/api/mobileTask/${id}`);
+            const res = await response.json();
+            if (res.success) {
+                setTask(res.result);
+            } else {
+                console.error('Failed to fetch task');
+            }
+        } catch (error) {
+            console.error('Error fetching task:', error);
         }
-        else{
-            // console.log('something is wrong')
-        }
+    };
 
-    }
-    useEffect(()=>{
+    useEffect(() => {
         getTask();
-    },[])
-    useEffect(()=>{
-        // console.log('taskkk is ',task)
+    }, [id]);
 
-    },[task])
-  return (
-    <div>
-      <TaskDetails desc={task.description} title={task.title} id={id} />
-    </div>
-  )
+    return (
+        <div>
+            <TaskDetails desc={task?.description} title={task?.title} id={id} />
+        </div>
+    );
 }
 
-export default Page
+export default Page;

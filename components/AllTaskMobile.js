@@ -17,11 +17,11 @@ function Alltask() {
     const [count, setCount] = useState(1)
     const [allTask, setAllTask] = useState([])
     const [isLoading, setIsLoading] = useState(true);
-/**
- * Fetches all tasks for a given page and updates the state with the fetched tasks.
- *
- * - A promise that resolves when the tasks have been fetched and state updated.
- */
+// /**
+//  * Fetches all tasks for a given page and updates the state with the fetched tasks.
+//  *
+//  * - A promise that resolves when the tasks have been fetched and state updated.
+//  */
 const getAllTask = async (page) => {
     const tasks = await fetchAllTask(page);
     setAllTask(tasks.allTask);
@@ -32,11 +32,11 @@ const getAllTask = async (page) => {
         getAllTask();
 
     }, [])
-/**
- * Handles the form submission by sending the provided data to the server.
- * 
- *  - A promise that resolves when the submission is complete.
- */
+// 
+//  Handles the form submission by sending the provided data to the server.
+//  
+//   - A promise that resolves when the submission is complete.
+//  
 const onSubmit = async (data) => {
     data = await data;
     // console.log(data);
@@ -60,19 +60,19 @@ const onSubmit = async (data) => {
         inputRef.current.style.opacity = '95%'
         inputRef.current.style.visibility = 'visible'
     }
-/**
- * Closes the form by setting the opacity to 0 and visibility to hidden.
- */
+// /**
+//  * Closes the form by setting the opacity to 0 and visibility to hidden.
+//  */
 const closeForm = () => {
     inputRef.current.style.opacity = '0';
     inputRef.current.style.visibility = 'hidden';
 }
 
-/**
- * Prevents the form from closing by stopping the event propagation.
- *
- *  - The event object.
- */
+// /**
+//  * Prevents the form from closing by stopping the event propagation.
+//  *
+//  *  - The event object.
+//  */
 const notCloseForm = (e) => {
     e.stopPropagation();
 }
@@ -88,13 +88,13 @@ const notCloseForm = (e) => {
     const pathName = usePathname();
     const router = useRouter();
     let queries = ''
-    /**
-     * Handles the change event with a debounced callback.
-     * This function updates the query parameters in the URL, performs a search for tasks,
-     * and updates the state with the search results.
-     *
-     * - The search query string.
-     */
+    // 
+    // Handles the change event with a debounced callback.
+    // This function updates the query parameters in the URL, performs a search for tasks,
+    // and updates the state with the search results.
+// 
+    // - The search query string.
+    // 
     const handleChange = useDebouncedCallback(async (query) => {
         setIsLoading(true);
         queries = query;
