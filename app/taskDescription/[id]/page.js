@@ -2,7 +2,7 @@
 import TaskDetails from '@/components/TaskDetails';
 import React, { useEffect, useState } from 'react'
 
-function page(params) {
+function Page(params) {
     const id=params.params.id;
     const [task,setTask]=useState({})
 
@@ -34,4 +34,4 @@ function page(params) {
   )
 }
 
-export default page
+export default Page
