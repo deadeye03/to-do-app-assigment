@@ -18,11 +18,14 @@ export const fetchAllTask = async (page) => {
 
 export const searchAllTask = async (query) => {
     console.log('fetching...course');
+    page = page * 1 || 1;
+    const limitBy = 4;
+    const skip = (page - 1) * limitBy;
     await connectDB();
     const words = query.split(' ').filter(Boolean);
     const regexPattern = words.map(word => `(?=.*${word})`).join('');
     const regex = new RegExp(regexPattern, 'i');
-    const allCourses = await Task.find({ title: { $regex: regex } }).lean();
+    const allCourses = await Task.find({ title: { $regex: regex } }).skip(skip).limit(limitBy).lean();
     const data = JSON.parse(JSON.stringify(allCourses))
     return data;
 }
